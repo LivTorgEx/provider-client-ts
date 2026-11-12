@@ -1,0 +1,54 @@
+{
+  "name": "@livtorgex/provider-client-ts",
+  "version": "0.1.0",
+  "description": "Catalog-driven public WebSocket feature client for LivTorgEx providers.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LivTorgEx/provider-client-ts.git"
+  },
+  "homepage": "https://github.com/LivTorgEx/provider-client-ts#readme",
+  "bugs": {
+    "url": "https://github.com/LivTorgEx/provider-client-ts/issues"
+  },
+  "keywords": ["livtorgex", "websocket", "market-data", "trading", "typescript"],
+  "type": "module",
+  "sideEffects": false,
+  "files": ["dist", "README.md", "LICENSE"],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "check": "pnpm lint && pnpm typecheck",
+    "prepublishOnly": "pnpm check && pnpm build",
+    "prepare": "husky"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.14.0",
+    "globals": "^17.14.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.2"
+  },
+  "lint-staged": {
+    "*.{ts,js,mjs}": "eslint --fix"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "packageManager": "pnpm@12.18.0"
+}
