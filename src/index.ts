@@ -1,8 +1,8 @@
-export { CatalogApiClient } from "./api/catalog-api-client.js";
-export { PublicProviderClient } from "./client.js";
-export { PUBLIC_TRADES_FEATURE, subscribePublicTrades } from "./features/public-trades.js";
-export { applyMapping, assertMappingSupported } from "./mapping/index.js";
-export type { MappingContext } from "./mapping/index.js";
+export { CatalogApiClient } from "./api/catalog-api-client";
+export { PublicProviderClient } from "./client";
+export { PUBLIC_TRADES_FEATURE, subscribePublicTrades } from "./features/public-trades";
+export { applyMapping, assertMappingSupported } from "./mapping";
+export type { MappingContext } from "./mapping";
 export type {
   FeatureLifecycleOperation,
   FeatureOperation,
@@ -23,4 +23,4 @@ export type {
   WebSocketLike,
   WebSocketOperation,
   WebSocketStep,
-} from "./types/index.js";
+} from "./types/index";

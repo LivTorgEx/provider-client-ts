@@ -1,10 +1,10 @@
-import { CatalogApiClient } from "./api/catalog-api-client.js";
-import { subscribePublicTrades } from "./features/public-trades.js";
-import { createGlobalWebSocket } from "./websocket/socket.js";
-import type { PublicProviderClientOptions } from "./types/client.js";
-import type { PublicWebSocketFeatureInstructions, WebSocketFeatureSelector } from "./types/catalog.js";
-import type { PublicTrade } from "./types/trade.js";
-import type { TransportStatus, WebSocketFactory } from "./types/websocket.js";
+import { CatalogApiClient } from "./api/catalog-api-client";
+import { subscribePublicTrades } from "./features/public-trades";
+import { createGlobalWebSocket } from "./websocket/socket";
+import type { PublicProviderClientOptions } from "./types/client";
+import type { PublicWebSocketFeatureInstructions, WebSocketFeatureSelector } from "./types/catalog";
+import type { PublicTrade } from "./types/trade";
+import type { TransportStatus, WebSocketFactory } from "./types/websocket";
 
 export class PublicProviderClient {
   readonly catalogApi: CatalogApiClient;

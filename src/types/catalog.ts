@@ -1,4 +1,4 @@
-import type { JsonValue } from "./json.js";
+import type { JsonValue } from "./json";
 
 export type MappingRule = {
   target: string;

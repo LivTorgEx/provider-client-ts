@@ -1,5 +1,5 @@
-export { connectDirectFeature } from "./direct-feature.js";
-export type { DirectFeatureOptions } from "./direct-feature.js";
-export { connectProxyTrades } from "./proxy-trades.js";
-export type { ProxyTradesOptions } from "./proxy-trades.js";
-export { createGlobalWebSocket } from "./socket.js";
+export { connectDirectFeature } from "./direct-feature";
+export type { DirectFeatureOptions } from "./direct-feature";
+export { connectProxyTrades } from "./proxy-trades";
+export type { ProxyTradesOptions } from "./proxy-trades";
+export { createGlobalWebSocket } from "./socket";

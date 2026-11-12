@@ -1,4 +1,4 @@
-import type { WebSocketFactory } from "../types/websocket.js";
+import type { WebSocketFactory } from "../types/websocket";
 
 export const createGlobalWebSocket: WebSocketFactory = (url) => {
   if (typeof globalThis.WebSocket !== "function") {

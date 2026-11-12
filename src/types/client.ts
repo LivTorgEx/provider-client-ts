@@ -1,4 +1,4 @@
-import type { WebSocketFactory } from "./websocket.js";
+import type { WebSocketFactory } from "./websocket";
 
 export type PublicProviderClientOptions = {
   /** Root URL of the LivTorgEx public HTTP API, for example https://api.livtorgex.com. */

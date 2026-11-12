@@ -3,7 +3,7 @@ import type {
   PublicFeaturesResponse,
   PublicWebSocketFeatureInstructions,
   WebSocketFeatureSelector,
-} from "../types/catalog.js";
+} from "../types/catalog";
 
 export class CatalogApiClient {
   private readonly baseUrl: URL;

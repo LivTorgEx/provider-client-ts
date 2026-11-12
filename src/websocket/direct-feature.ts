@@ -1,4 +1,10 @@
-import { applyMapping, assertMappingSupported, type MappingContext } from "../mapping/index.js";
+import {
+  applyMapping,
+  assertConditionSupported,
+  assertMappingSupported,
+  matchesCondition,
+  type MappingContext,
+} from "../mapping";
 import type {
   FeatureLifecycleOperation,
   JsonValue,
@@ -6,8 +12,8 @@ import type {
   PublicTrade,
   WebSocketOperation,
   WebSocketStep,
-} from "../types/index.js";
-import type { WebSocketFactory, WebSocketLike } from "../types/websocket.js";
+} from "../types/index";
+import type { WebSocketFactory, WebSocketLike } from "../types/websocket";
 
 export type DirectFeatureOptions = {
   instructions: PublicWebSocketFeatureInstructions;
@@ -102,6 +108,18 @@ export function connectDirectFeature(options: DirectFeatureOptions): () => void 
     }
 
     for (const mapping of instructions.feature_operations) {
+      if (mapping.match_condition) {
+        try {
+          if (!matchesCondition(
+            mapping.match_condition,
+            frame,
+            contextFor(options.providerCode, options.input),
+          )) continue;
+        } catch (error) {
+          fail(errorMessage(error));
+          return;
+        }
+      }
       if (!mapping.output_mapping) continue;
       try {
         const mapped = applyMapping<PublicTrade | PublicTrade[]>(
@@ -148,9 +166,7 @@ function assertDirectInstructions(
   }
   for (const operation of instructions.feature_operations) {
     findOperation(instructions, operation.websocket_operation_code);
-    if (operation.match_condition || operation.router_key) {
-      throw new Error("Catalog trade routing expressions are not supported by this client version");
-    }
+    if (operation.match_condition) assertConditionSupported(operation.match_condition);
     if (operation.input_mapping) assertMappingSupported(operation.input_mapping);
     if (!operation.output_mapping) {
       throw new Error("Catalog trade operation has no output mapping");

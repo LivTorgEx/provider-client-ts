@@ -1,10 +1,10 @@
-import type { CatalogApiClient } from "../api/catalog-api-client.js";
-import type { WebSocketFeatureSelector } from "../types/catalog.js";
-import type { JsonValue } from "../types/json.js";
-import type { PublicTrade } from "../types/trade.js";
-import type { TransportStatus, WebSocketFactory } from "../types/websocket.js";
-import { connectDirectFeature } from "../websocket/direct-feature.js";
-import { connectProxyTrades } from "../websocket/proxy-trades.js";
+import type { CatalogApiClient } from "../api/catalog-api-client";
+import type { WebSocketFeatureSelector } from "../types/catalog";
+import type { JsonValue } from "../types/json";
+import type { PublicTrade } from "../types/trade";
+import type { TransportStatus, WebSocketFactory } from "../types/websocket";
+import { connectDirectFeature } from "../websocket/direct-feature";
+import { connectProxyTrades } from "../websocket/proxy-trades";
 
 export const PUBLIC_TRADES_FEATURE = "kline.public_trades.v1";
 

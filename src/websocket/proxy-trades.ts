@@ -1,5 +1,5 @@
-import type { PublicTrade, PublicTradeProxyMessage } from "../types/trade.js";
-import type { TransportStatus, WebSocketFactory, WebSocketLike } from "../types/websocket.js";
+import type { PublicTrade, PublicTradeProxyMessage } from "../types/trade";
+import type { TransportStatus, WebSocketFactory, WebSocketLike } from "../types/websocket";
 
 export type ProxyTradesOptions = {
   proxyUrl: string;

@@ -1,1 +1,1 @@
-export { CatalogApiClient } from "./catalog-api-client.js";
+export { CatalogApiClient } from "./catalog-api-client";
